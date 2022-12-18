@@ -1,8 +1,8 @@
-[![Actions Status](https://github.com/filipdutescu/modern-cpp-template/workflows/MacOS/badge.svg)](https://github.com/filipdutescu/modern-cpp-template/actions)
-[![Actions Status](https://github.com/filipdutescu/modern-cpp-template/workflows/Windows/badge.svg)](https://github.com/filipdutescu/modern-cpp-template/actions)
-[![Actions Status](https://github.com/filipdutescu/modern-cpp-template/workflows/Ubuntu/badge.svg)](https://github.com/filipdutescu/modern-cpp-template/actions)
-[![codecov](https://codecov.io/gh/filipdutescu/modern-cpp-template/branch/master/graph/badge.svg)](https://codecov.io/gh/filipdutescu/modern-cpp-template)
-[![GitHub release (latest by date)](https://img.shields.io/github/v/release/filipdutescu/modern-cpp-template)](https://github.com/filipdutescu/modern-cpp-template/releases)
+[![Actions Status](https://github.com/tqlong/tic-tac-toe/workflows/MacOS/badge.svg)](https://github.com/tqlong/tic-tac-toe/actions)
+[![Actions Status](https://github.com/tqlong/tic-tac-toe/workflows/Windows/badge.svg)](https://github.com/tqlong/tic-tac-toe/actions)
+[![Actions Status](https://github.com/tqlong/tic-tac-toe/workflows/Ubuntu/badge.svg)](https://github.com/tqlong/tic-tac-toe/actions)
+[![codecov](https://codecov.io/gh/tqlong/tic-tac-toe/branch/master/graph/badge.svg)](https://codecov.io/gh/tqlong/tic-tac-toe)
+[![GitHub release (latest by date)](https://img.shields.io/github/v/release/tqlong/tic-tac-toe)](https://github.com/tqlong/tic-tac-toe/releases)
 
 # Modern C++ Template
 
@@ -74,15 +74,15 @@ template *as-is*, meaning using the versions recommended here, then you will nee
 ### Installing
 
 It is fairly easy to install the project, all you need to do is clone if from
-[GitHub](https://github.com/filipdutescu/modern-cpp-template) or
-[generate a new repository from it](https://github.com/filipdutescu/modern-cpp-template/generate)
+[GitHub](https://github.com/tqlong/tic-tac-toe) or
+[generate a new repository from it](https://github.com/tqlong/tic-tac-toe/generate)
 (also on **GitHub**).
 
 If you wish to clone the repository, rather than generate from it, you simply need
 to run:
 
 ```bash
-git clone https://github.com/filipdutescu/modern-cpp-template/
+git clone https://github.com/tqlong/tic-tac-toe/
 ```
 
 After finishing getting a copy of the project, with any of the methods above, create
@@ -95,6 +95,14 @@ You should also make the same changes in the GitHub workflows provided, notably
 [`.github/workflows/ubuntu.yml`](.github/workflows/ubuntu.yml), in which you should
 replace the CMake option `-DProject_ENABLE_CODE_COVERAGE=1` to
 `-DMyNewProject_ENABLE_CODE_COVERAGE=1`.
+
+```
+cmake -Bbuild -DCMAKE_INSTALL_PREFIX=/Users/longtran/Desktop/XCode/.local -Dtictactoe_ENABLE_CODE_COVERAGE=1
+cmake --build build --config Release -j10
+cd build
+ctest -C Release -VV
+bash <(curl -s https://codecov.io/bash)
+```
 
 Finally, change `"Project"` from `CMakeLists.txt`, from
 
@@ -194,11 +202,11 @@ become a contributor and the process for submitting pull requests to us.
 
 This project makes use of [SemVer](http://semver.org/) for versioning. A list of
 existing versions can be found in the
-[project's releases](https://github.com/filipdutescu/modern-cpp-template/releases).
+[project's releases](https://github.com/tqlong/tic-tac-toe/releases).
 
 ## Authors
 
-* **Filip-Ioan Dutescu** - [@filipdutescu](https://github.com/filipdutescu)
+* **Tran Quoc Long** - [@tqlong](https://github.com/tqlong)
 
 ## License
 
