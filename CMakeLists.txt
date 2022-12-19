@@ -52,14 +52,6 @@ endif()
 #
 # Prevent building in the source directory
 #
-set(CMAKE_MODULE_PATH "${PROJECT_SOURCE_DIR}/cmake")
-if(WIN32)
-  find_package(SFML COMPONENTS system window graphics CONFIG REQUIRED)
-else()
-  find_package(SFML REQUIRED system window graphics network audio)
-endif()
-message(STATUS "SFML found in ${SFML_INCLUDE_DIR}")
-
 if(PROJECT_SOURCE_DIR STREQUAL PROJECT_BINARY_DIR)
   message(FATAL_ERROR "In-source builds not allowed. Please make a new directory (called a build directory) and run CMake from there.\n")
 endif()
@@ -74,6 +66,15 @@ include(cmake/Vcpkg.cmake)
 #
 # Create library, setup header and source files
 #
+set(CMAKE_MODULE_PATH "${PROJECT_SOURCE_DIR}/cmake")
+if(WIN32)
+  find_package(SFML COMPONENTS system window graphics CONFIG REQUIRED)
+else()
+  find_package(SFML REQUIRED system window graphics network audio)
+endif()
+message(STATUS "SFML found in ${SFML_INCLUDE_DIR}")
+
+
 
 # Find all headers and implementation files
 include(cmake/SourcesAndHeaders.cmake)
