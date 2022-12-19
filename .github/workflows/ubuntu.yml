@@ -9,6 +9,7 @@ on:
 env:
   BUILD_TYPE: Release
   INSTALL_LOCATION: .local
+  CODECOV_TOKEN: 38f01fd4-8a5a-474a-a9fa-dce5d8f7ad63
 
 jobs:
   build:
