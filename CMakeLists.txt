@@ -53,7 +53,11 @@ endif()
 # Prevent building in the source directory
 #
 set(CMAKE_MODULE_PATH "${PROJECT_SOURCE_DIR}/cmake")
-find_package(SFML REQUIRED system window graphics network audio)
+if(WIN32)
+  find_package(SFML COMPONENTS system window graphics CONFIG REQUIRED)
+else()
+  find_package(SFML REQUIRED system window graphics network audio)
+endif()
 message(STATUS "SFML found in ${SFML_INCLUDE_DIR}")
 
 if(PROJECT_SOURCE_DIR STREQUAL PROJECT_BINARY_DIR)
