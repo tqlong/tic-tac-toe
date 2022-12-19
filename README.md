@@ -1,7 +1,7 @@
 [![Actions Status](https://github.com/tqlong/tic-tac-toe/workflows/MacOS/badge.svg)](https://github.com/tqlong/tic-tac-toe/actions)
 [![Actions Status](https://github.com/tqlong/tic-tac-toe/workflows/Windows/badge.svg)](https://github.com/tqlong/tic-tac-toe/actions)
 [![Actions Status](https://github.com/tqlong/tic-tac-toe/workflows/Ubuntu/badge.svg)](https://github.com/tqlong/tic-tac-toe/actions)
-[![codecov](https://codecov.io/gh/tqlong/tic-tac-toe/branch/master/graph/badge.svg)](https://codecov.io/gh/tqlong/tic-tac-toe)
+[![codecov](https://codecov.io/gh/tqlong/tic-tac-toe/branch/main/graph/badge.svg)](https://codecov.io/gh/tqlong/tic-tac-toe)
 [![GitHub release (latest by date)](https://img.shields.io/github/v/release/tqlong/tic-tac-toe)](https://github.com/tqlong/tic-tac-toe/releases)
 
 # Modern C++ Template
