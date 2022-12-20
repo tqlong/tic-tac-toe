@@ -2,9 +2,9 @@ name: MacOS
 
 on:
   push:
-    branches: [ windows ]
+    branches: [ main ]
   pull_request:
-    branches: [ windows ]
+    branches: [ main ]
 
 env:
   BUILD_TYPE: Release
