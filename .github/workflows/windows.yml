@@ -26,37 +26,25 @@ jobs:
         path: ${{env.INSTALL_LOCATION}}
         key: ${{runner.os}}-dependencies
 
-    - name: install sfml
+    - name: install sfml gtest
       run: |
-        cd $HOME
+        cd ..
         git clone https://github.com/microsoft/vcpkg
         cd .\vcpkg\
         .\bootstrap-vcpkg.bat
-        .\vcpkg.exe install sfml --triplet x64-windows
-
-    - name: install GoogleTest
-      if: ${{steps.cache.output.cache-hit != 'true'}}
-      run: |
-        cd $HOME\vcpkg
-        .\vcpkg.exe install gtest --triplet x64-windows
+        .\vcpkg.exe install sfml gtest --triplet x64-windows
 
     - name: configure
-      run: |
-        cd $HOME/tic-tac-toe
-        cmake -Bbuild -DCMAKE_INSTALL_PREFIX="$HOME/$env:INSTALL_LOCATION" -DCMAKE_TOOLCHAIN_FILE="$HOME/vcpkg/scripts/buildsystems/vcpkg.cmake"
+      run: cmake -Bbuild -DCMAKE_INSTALL_PREFIX="$HOME/$env:INSTALL_LOCATION" -DCMAKE_TOOLCHAIN_FILE="../vcpkg/scripts/buildsystems/vcpkg.cmake"
       
     - name: build
-      run: |
-        cd $HOME/tic-tac-toe
-        cmake --build build --config "$env:BUILD_TYPE" -j4
+      run: cmake --build build --config "$env:BUILD_TYPE" -j4
 
     - name: run tests
       run: |
-        cd $HOME/tic-tac-toe/build
+        cd build
         ctest -C "$env:BUILD_TYPE" -VV
 
     - name: install project
-      run: |
-        cd $HOME
-        cmake --build build --target install --config "$env:BUILD_TYPE" 
+      run: cmake --build build --target install --config "$env:BUILD_TYPE" 
 
