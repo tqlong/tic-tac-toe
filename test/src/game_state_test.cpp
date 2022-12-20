@@ -82,6 +82,13 @@ protected:
         EXPECT_EQ(state.playScreen, GameState::PlayScreen::PlayingScreen);
     }
 
+    void TestXOnColumn() {
+        state.s[0][0] = 'X'; state.s[0][1] = 'O'; state.s[0][2] = 'O';
+        state.s[1][0] = 'X'; state.s[1][1] = 'X'; state.s[1][2] = 'O';
+        state.s[2][0] = 'X'; state.s[2][1] = 'O'; state.s[2][2] = 'X';
+        EXPECT_EQ(state.getScoreFinalState(state.s), 1);
+    }
+
 private:
     GameState state;
 };
