@@ -40,3 +40,33 @@ if(${PROJECT_NAME}_ENABLE_UNIT_TESTING)
   message(STATUS "Build unit tests for the project. Tests should always be found in the test folder\n")
   add_subdirectory(test)
 endif()
+
+### INSTALL
+include(GNUInstallDirs)
+install(
+  TARGETS
+  ${PROJECT_NAME}
+  EXPORT
+  ${PROJECT_NAME}Targets
+  LIBRARY DESTINATION
+  ${CMAKE_INSTALL_LIBDIR}
+  RUNTIME DESTINATION
+  ${CMAKE_INSTALL_BINDIR}
+  ARCHIVE DESTINATION
+  ${CMAKE_INSTALL_LIBDIR}
+  INCLUDES DESTINATION
+  ${CMAKE_INSTALL_INCLUDEDIR}
+  PUBLIC_HEADER DESTINATION
+  include
+)
+
+install(
+  EXPORT
+  ${PROJECT_NAME}Targets
+  FILE
+  ${PROJECT_NAME}Targets.cmake
+  NAMESPACE
+  ${PROJECT_NAME}::
+  DESTINATION
+  ${CMAKE_INSTALL_LIBDIR}/cmake/${PROJECT_NAME}
+)
