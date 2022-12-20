@@ -1,8 +1,11 @@
-cmake_minimum_required(VERSION 3.22)
+cmake_minimum_required(VERSION 3.19)
 
 project(tictactoe VERSION 0.1.0 LANGUAGES CXX)
 
 set(CMAKE_CXX_STANDARD 17)
+if (APPLE)
+  set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -mmacosx-version-min=13.0")
+endif()
 
 if(NOT CMAKE_BUILD_TYPE)
   set(CMAKE_BUILD_TYPE "Debug")
@@ -30,11 +33,11 @@ target_include_directories(${PROJECT_NAME}_LIB PRIVATE ${CMAKE_SOURCE_DIR}/inclu
 target_link_libraries(${PROJECT_NAME}_LIB PRIVATE ${SFML_LIBRARIES})
 
 if (${CMAKE_PROJECT_NAME}_ENABLE_CODE_COVERAGE AND NOT WIN32)
-  target_compile_options(${CMAKE_PROJECT_NAME} PUBLIC -O0 -g -fprofile-arcs -ftest-coverage)
-  target_link_options(${CMAKE_PROJECT_NAME} PUBLIC -fprofile-arcs -ftest-coverage)
+  include(CTest)
+  target_compile_options(${CMAKE_PROJECT_NAME}_LIB PUBLIC -O0 -g -fprofile-arcs -ftest-coverage)
+  target_link_options(${CMAKE_PROJECT_NAME}_LIB PUBLIC -fprofile-arcs -ftest-coverage)
   message(STATUS "Code coverage is enabled.")
 endif()
-
 if(${PROJECT_NAME}_ENABLE_UNIT_TESTING)
   enable_testing()
   message(STATUS "Build unit tests for the project. Tests should always be found in the test folder\n")
