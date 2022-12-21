@@ -1,0 +1,62 @@
+[
+{
+  "directory": "/media/huyenbui117/D/AILab/tic-tac-toe",
+  "command": "/usr/bin/c++  -I/media/huyenbui117/D/AILab/tic-tac-toe/include -g -std=gnu++17 -o CMakeFiles/tictactoe.dir/src/main.cpp.o -c /media/huyenbui117/D/AILab/tic-tac-toe/src/main.cpp",
+  "file": "/media/huyenbui117/D/AILab/tic-tac-toe/src/main.cpp"
+},
+{
+  "directory": "/media/huyenbui117/D/AILab/tic-tac-toe",
+  "command": "/usr/bin/c++  -I/media/huyenbui117/D/AILab/tic-tac-toe/include -g -std=gnu++17 -o CMakeFiles/tictactoe.dir/src/game_state.cpp.o -c /media/huyenbui117/D/AILab/tic-tac-toe/src/game_state.cpp",
+  "file": "/media/huyenbui117/D/AILab/tic-tac-toe/src/game_state.cpp"
+},
+{
+  "directory": "/media/huyenbui117/D/AILab/tic-tac-toe",
+  "command": "/usr/bin/c++  -I/media/huyenbui117/D/AILab/tic-tac-toe/include -g -std=gnu++17 -o CMakeFiles/tictactoe.dir/src/alpha_beta.cpp.o -c /media/huyenbui117/D/AILab/tic-tac-toe/src/alpha_beta.cpp",
+  "file": "/media/huyenbui117/D/AILab/tic-tac-toe/src/alpha_beta.cpp"
+},
+{
+  "directory": "/media/huyenbui117/D/AILab/tic-tac-toe",
+  "command": "/usr/bin/c++  -I/media/huyenbui117/D/AILab/tic-tac-toe/include -g -std=gnu++17 -o CMakeFiles/tictactoe.dir/src/controller.cpp.o -c /media/huyenbui117/D/AILab/tic-tac-toe/src/controller.cpp",
+  "file": "/media/huyenbui117/D/AILab/tic-tac-toe/src/controller.cpp"
+},
+{
+  "directory": "/media/huyenbui117/D/AILab/tic-tac-toe",
+  "command": "/usr/bin/c++  -I/media/huyenbui117/D/AILab/tic-tac-toe/include -g -std=gnu++17 -o CMakeFiles/tictactoe.dir/src/render_engine.cpp.o -c /media/huyenbui117/D/AILab/tic-tac-toe/src/render_engine.cpp",
+  "file": "/media/huyenbui117/D/AILab/tic-tac-toe/src/render_engine.cpp"
+},
+{
+  "directory": "/media/huyenbui117/D/AILab/tic-tac-toe",
+  "command": "/usr/bin/c++  -I/media/huyenbui117/D/AILab/tic-tac-toe/include -g -std=gnu++17 -o CMakeFiles/tictactoe.dir/src/resource_manager.cpp.o -c /media/huyenbui117/D/AILab/tic-tac-toe/src/resource_manager.cpp",
+  "file": "/media/huyenbui117/D/AILab/tic-tac-toe/src/resource_manager.cpp"
+},
+{
+  "directory": "/media/huyenbui117/D/AILab/tic-tac-toe",
+  "command": "/usr/bin/c++  -I/media/huyenbui117/D/AILab/tic-tac-toe/include -g -O0 -g -fprofile-arcs -ftest-coverage -std=gnu++17 -o CMakeFiles/tictactoe_LIB.dir/src/game_state.cpp.o -c /media/huyenbui117/D/AILab/tic-tac-toe/src/game_state.cpp",
+  "file": "/media/huyenbui117/D/AILab/tic-tac-toe/src/game_state.cpp"
+},
+{
+  "directory": "/media/huyenbui117/D/AILab/tic-tac-toe",
+  "command": "/usr/bin/c++  -I/media/huyenbui117/D/AILab/tic-tac-toe/include -g -O0 -g -fprofile-arcs -ftest-coverage -std=gnu++17 -o CMakeFiles/tictactoe_LIB.dir/src/alpha_beta.cpp.o -c /media/huyenbui117/D/AILab/tic-tac-toe/src/alpha_beta.cpp",
+  "file": "/media/huyenbui117/D/AILab/tic-tac-toe/src/alpha_beta.cpp"
+},
+{
+  "directory": "/media/huyenbui117/D/AILab/tic-tac-toe",
+  "command": "/usr/bin/c++  -I/media/huyenbui117/D/AILab/tic-tac-toe/include -g -O0 -g -fprofile-arcs -ftest-coverage -std=gnu++17 -o CMakeFiles/tictactoe_LIB.dir/src/controller.cpp.o -c /media/huyenbui117/D/AILab/tic-tac-toe/src/controller.cpp",
+  "file": "/media/huyenbui117/D/AILab/tic-tac-toe/src/controller.cpp"
+},
+{
+  "directory": "/media/huyenbui117/D/AILab/tic-tac-toe",
+  "command": "/usr/bin/c++  -I/media/huyenbui117/D/AILab/tic-tac-toe/include -g -O0 -g -fprofile-arcs -ftest-coverage -std=gnu++17 -o CMakeFiles/tictactoe_LIB.dir/src/render_engine.cpp.o -c /media/huyenbui117/D/AILab/tic-tac-toe/src/render_engine.cpp",
+  "file": "/media/huyenbui117/D/AILab/tic-tac-toe/src/render_engine.cpp"
+},
+{
+  "directory": "/media/huyenbui117/D/AILab/tic-tac-toe",
+  "command": "/usr/bin/c++  -I/media/huyenbui117/D/AILab/tic-tac-toe/include -g -O0 -g -fprofile-arcs -ftest-coverage -std=gnu++17 -o CMakeFiles/tictactoe_LIB.dir/src/resource_manager.cpp.o -c /media/huyenbui117/D/AILab/tic-tac-toe/src/resource_manager.cpp",
+  "file": "/media/huyenbui117/D/AILab/tic-tac-toe/src/resource_manager.cpp"
+},
+{
+  "directory": "/media/huyenbui117/D/AILab/tic-tac-toe/test",
+  "command": "/usr/bin/c++  -I/media/huyenbui117/D/AILab/tic-tac-toe/include -g -O0 -g -fprofile-arcs -ftest-coverage -std=gnu++17 -o CMakeFiles/game_state_test_Tests.dir/src/game_state_test.cpp.o -c /media/huyenbui117/D/AILab/tic-tac-toe/test/src/game_state_test.cpp",
+  "file": "/media/huyenbui117/D/AILab/tic-tac-toe/test/src/game_state_test.cpp"
+}
+]
