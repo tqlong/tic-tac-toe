@@ -1,0 +1,131 @@
+        -:    0:Source:/media/huyenbui117/D/AILab/tic-tac-toe/include/tictactoe/render_engine.h
+        -:    1:#ifndef RENDER_ENGINE_H
+        -:    2:#define RENDER_ENGINE_H
+        -:    3:
+        -:    4:#include <SFML/Graphics.hpp>
+        -:    5:
+        -:    6:#include "resource_manager.h"
+        -:    7:#include "game_state.h"
+        -:    8:
+        -:    9:/**
+        -:   10: * @brief The RenderEngine class
+        -:   11: * This class is responsible for rendering the game state
+        -:   12: * to the screen.
+        -:   13: */
+        -:   14:class GameWindow: public sf::RenderWindow {
+        -:   15:    ResourceManager& manager;
+        -:   16:    GameState& state;
+        -:   17:
+        -:   18:    bool isHoverOnButtonHvsH = false;
+        -:   19:    bool isHoverOnButtonHvsM = false;
+        -:   20:    bool isHoverOnButtonMvsH = false;
+        -:   21:    int hoverI = -1;
+        -:   22:    int hoverJ = -1;
+        -:   23:
+        -:   24:public:
+        -:   25:    // Size of the game board
+        -:   26:    static const int WINDOW_WIDTH = 900;
+        -:   27:    static const int WINDOW_HEIGHT = 900;
+        -:   28:    // Size of each cell
+        -:   29:    static const int CELL_WIDTH = WINDOW_WIDTH / 3;
+        -:   30:    static const int CELL_HEIGHT = WINDOW_HEIGHT / 3;
+        -:   31:    //
+        -:   32:    static const int SHAPE_RADIUS = CELL_WIDTH / 2;
+        -:   33:    // position of O, X in texture image.png
+        -:   34:
+        -:   35:    static const int BUTTON_HvH_X = 100;
+        -:   36:    static const int BUTTON_HvH_Y = WINDOW_HEIGHT/2-100;
+        -:   37:    static const int BUTTON_HvM_X = WINDOW_WIDTH/2+100;
+        -:   38:    static const int BUTTON_HvM_Y = WINDOW_HEIGHT/2-200;
+        -:   39:    static const int BUTTON_MvH_X = WINDOW_WIDTH/2+100;
+        -:   40:    static const int BUTTON_MvH_Y = WINDOW_HEIGHT/2+100;
+        -:   41:    static const int BUTTON_WIDTH = 200;
+        -:   42:    static const int BUTTON_HEIGHT = 200;
+        -:   43:
+        -:   44:    static const sf::IntRect ORECT;
+        -:   45:    static const sf::IntRect XRECT;
+        -:   46:
+        -:   47:    GameWindow(ResourceManager& manager_, GameState& state_)
+        -:   48:        : sf::RenderWindow(sf::VideoMode(WINDOW_WIDTH, WINDOW_HEIGHT), "Tic Tac Toe"),
+        -:   49:          manager(manager_), state(state_) {}
+        -:   50:
+        -:   51:    // Render the game state to the screen
+        -:   52:    // create shape X, O
+        -:   53:    // create text to display final message
+        -:   54:    void render();
+        -:   55:
+    #####:   56:    static sf::IntRect getButtonHvsHRect() {
+    #####:   57:        return sf::IntRect(
+        -:   58:            BUTTON_HvH_X, BUTTON_HvH_Y,
+    #####:   59:            BUTTON_WIDTH, BUTTON_HEIGHT);
+        -:   60:    }
+------------------
+_ZN10GameWindow17getButtonHvsHRectEv:
+function _ZN10GameWindow17getButtonHvsHRectEv called 0 returned 0% blocks executed 0%
+    #####:   56:    static sf::IntRect getButtonHvsHRect() {
+    #####:   57:        return sf::IntRect(
+call    0 never executed
+        -:   58:            BUTTON_HvH_X, BUTTON_HvH_Y,
+    #####:   59:            BUTTON_WIDTH, BUTTON_HEIGHT);
+        -:   60:    }
+------------------
+_ZN10GameWindow17getButtonHvsHRectEv:
+function _ZN10GameWindow17getButtonHvsHRectEv called 0 returned 0% blocks executed 0%
+    #####:   56:    static sf::IntRect getButtonHvsHRect() {
+    #####:   57:        return sf::IntRect(
+call    0 never executed
+        -:   58:            BUTTON_HvH_X, BUTTON_HvH_Y,
+    #####:   59:            BUTTON_WIDTH, BUTTON_HEIGHT);
+        -:   60:    }
+------------------
+    #####:   61:    static sf::IntRect getButtonHvsMRect() { 
+    #####:   62:        return sf::IntRect(
+        -:   63:            BUTTON_HvM_X, BUTTON_HvM_Y,
+    #####:   64:            BUTTON_WIDTH, BUTTON_HEIGHT);
+        -:   65:    }
+------------------
+_ZN10GameWindow17getButtonHvsMRectEv:
+function _ZN10GameWindow17getButtonHvsMRectEv called 0 returned 0% blocks executed 0%
+    #####:   61:    static sf::IntRect getButtonHvsMRect() { 
+    #####:   62:        return sf::IntRect(
+call    0 never executed
+        -:   63:            BUTTON_HvM_X, BUTTON_HvM_Y,
+    #####:   64:            BUTTON_WIDTH, BUTTON_HEIGHT);
+        -:   65:    }
+------------------
+_ZN10GameWindow17getButtonHvsMRectEv:
+function _ZN10GameWindow17getButtonHvsMRectEv called 0 returned 0% blocks executed 0%
+    #####:   61:    static sf::IntRect getButtonHvsMRect() { 
+    #####:   62:        return sf::IntRect(
+call    0 never executed
+        -:   63:            BUTTON_HvM_X, BUTTON_HvM_Y,
+    #####:   64:            BUTTON_WIDTH, BUTTON_HEIGHT);
+        -:   65:    }
+------------------
+    #####:   66:    static sf::IntRect getButtonMvsHRect() { 
+    #####:   67:        return sf::IntRect(
+        -:   68:            BUTTON_MvH_X, BUTTON_MvH_Y,
+    #####:   69:            BUTTON_WIDTH, BUTTON_HEIGHT);
+        -:   70:    }
+        -:   71:
+        -:   72:    // set the hover cell
+        -:   73:    void setHoveredCell(int i, int j);
+        -:   74:
+        -:   75:    // set hovered buttons
+        -:   76:    void setHoveredButtons(sf::Vector2i localPosition);
+        -:   77:private:
+        -:   78:    // Create shape X, O
+        -:   79:    sf::CircleShape createShape(sf::Texture& texture, unsigned int i, unsigned int j, char player);
+        -:   80:
+        -:   81:    // Create text to display final message
+        -:   82:    sf::Text createText(sf::Font& font, const std::string& msg);
+        -:   83:
+        -:   84:    // Render functions for each screen
+        -:   85:    void renderPlayModeScreen();
+        -:   86:    void renderPlayingScreen();
+        -:   87:
+        -:   88:    // Create button
+        -:   89:    sf::Sprite createButton(const std::string& msg);
+        -:   90:};
+        -:   91:
+        -:   92:#endif

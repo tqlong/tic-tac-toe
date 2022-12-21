@@ -84,11 +84,11 @@ protected:
     
     void TestScoreFinalState() {
         {
-            GameState state1;
-            state.s[0][0] = 'X'; state1.s[0][1] = 'X'; state1.s[0][2] = 'X';
-            state.s[1][0] = 'X'; state1.s[1][1] = 'O'; state1.s[1][2] = 'O';
-            state.s[2][0] = 'O'; state1.s[2][1] = ' '; state1.s[2][2] = ' ';
-            EXPECT_EQ(state1.getScoreFinalState(state1.s), 1);
+            GameState state;
+            state.s[0][0] = 'X'; state.s[0][1] = 'X'; state.s[0][2] = 'X';
+            state.s[1][0] = 'X'; state.s[1][1] = 'O'; state.s[1][2] = 'O';
+            state.s[2][0] = 'O'; state.s[2][1] = ' '; state.s[2][2] = ' ';
+            EXPECT_EQ(state.getScoreFinalState(state.s), 1);
         }        {
             GameState state1;
             state1.s[0][0] = 'X'; state1.s[0][1] = 'O'; state1.s[0][2] = 'X';

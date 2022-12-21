@@ -1,0 +1,427 @@
+        -:    0:Source:/media/huyenbui117/D/AILab/tic-tac-toe/src/render_engine.cpp
+        -:    1:#include "tictactoe/render_engine.h"
+        -:    2:
+        -:    3:// position of O, X in texture image.png
+        -:    4:const sf::IntRect GameWindow::ORECT = sf::IntRect(110, 20, 80, 80);
+        -:    5:const sf::IntRect GameWindow::XRECT = sf::IntRect(20, 20, 80, 80);
+        -:    6:
+        -:    7:// Render the game state to the screen
+        -:    8:// create shape X, O
+        -:    9:// create text to display final message
+function _ZN10GameWindow6renderEv called 0 returned 0% blocks executed 0%
+    #####:   10:void GameWindow::render() {
+    #####:   11:    clear();
+call    0 never executed
+call    1 never executed
+branch  2 never executed
+branch  3 never executed
+        -:   12:
+    #####:   13:    switch (state.getPlayScreen()) {
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+branch  3 never executed
+    #####:   14:    case GameState::PlayScreen::PlayModeScreen:
+    #####:   15:        renderPlayModeScreen();
+call    0 never executed
+    #####:   16:        break;
+    #####:   17:    case GameState::PlayScreen::PlayingScreen:
+    #####:   18:        renderPlayingScreen();
+call    0 never executed
+    #####:   19:        break;
+        -:   20:    }
+        -:   21:
+    #####:   22:    display();
+call    0 never executed
+    #####:   23:}
+        -:   24:
+function _ZN10GameWindow20renderPlayModeScreenEv called 0 returned 0% blocks executed 0%
+    #####:   25:void GameWindow::renderPlayModeScreen()
+        -:   26:{
+        -:   27:    // Draw the play buttons
+    #####:   28:    sf::Sprite buttonHvsH = createButton("Human vs Human");
+call    0 never executed
+call    1 never executed
+branch  2 never executed
+branch  3 never executed
+call    4 never executed
+branch  5 never executed
+branch  6 never executed
+call    7 never executed
+call    8 never executed
+call    9 never executed
+    #####:   29:    buttonHvsH.setPosition(BUTTON_HvH_X, BUTTON_HvH_Y);
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:   30:    if (isHoverOnButtonHvsH) {
+branch  0 never executed
+branch  1 never executed
+    #####:   31:        buttonHvsH.setColor(sf::Color(255, 255, 255, 200));
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+call    3 never executed
+branch  4 never executed
+branch  5 never executed
+        -:   32:    }
+        -:   33:
+    #####:   34:    sf::Sprite buttonHvsM = createButton("Human vs Machine");
+call    0 never executed
+call    1 never executed
+branch  2 never executed
+branch  3 never executed
+call    4 never executed
+branch  5 never executed
+branch  6 never executed
+call    7 never executed
+call    8 never executed
+call    9 never executed
+    #####:   35:    buttonHvsM.setPosition(BUTTON_HvM_X, BUTTON_HvM_Y);
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:   36:    if (isHoverOnButtonHvsM) {
+branch  0 never executed
+branch  1 never executed
+    #####:   37:        buttonHvsM.setColor(sf::Color(255, 255, 255, 200));
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+call    3 never executed
+branch  4 never executed
+branch  5 never executed
+        -:   38:    }
+        -:   39:
+    #####:   40:    sf::Sprite buttonMvsH = createButton("Machine vs Human");
+call    0 never executed
+call    1 never executed
+branch  2 never executed
+branch  3 never executed
+call    4 never executed
+branch  5 never executed
+branch  6 never executed
+call    7 never executed
+call    8 never executed
+call    9 never executed
+    #####:   41:    buttonMvsH.setPosition(BUTTON_MvH_X, BUTTON_MvH_Y);
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:   42:    if (isHoverOnButtonMvsH) {
+branch  0 never executed
+branch  1 never executed
+    #####:   43:        buttonMvsH.setColor(sf::Color(255, 255, 255, 200));
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+call    3 never executed
+branch  4 never executed
+branch  5 never executed
+        -:   44:    }
+        -:   45:
+    #####:   46:    draw(buttonHvsH);
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:   47:    draw(buttonHvsM);
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:   48:    draw(buttonMvsH);
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:   49:}
+        -:   50:
+function _ZN10GameWindow19renderPlayingScreenEv called 0 returned 0% blocks executed 0%
+    #####:   51:void GameWindow::renderPlayingScreen()
+        -:   52:{
+    #####:   53:    if (hoverI != -1 && hoverJ != -1) {
+branch  0 never executed
+branch  1 never executed
+branch  2 never executed
+branch  3 never executed
+    #####:   54:        sf::RectangleShape shape(sf::Vector2f(CELL_WIDTH, CELL_HEIGHT));
+call    0 never executed
+call    1 never executed
+branch  2 never executed
+branch  3 never executed
+call    4 never executed
+call    5 never executed
+    #####:   55:        shape.setFillColor(sf::Color(0, 0, 0, 100));
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+call    3 never executed
+branch  4 never executed
+branch  5 never executed
+    #####:   56:        shape.setOutlineColor(sf::Color::Yellow);
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:   57:        shape.setOutlineThickness(3);
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:   58:        shape.setPosition(hoverI*CELL_WIDTH, hoverJ*CELL_HEIGHT);
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+        -:   59:        
+    #####:   60:        draw(shape);
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+        -:   61:    }
+        -:   62:
+        -:   63:    // Draw the shapes
+    #####:   64:    sf::Texture& texture = manager.getTexture();
+call    0 never executed
+    #####:   65:    for (unsigned int i = 0; i < GameState::SIZE; i++) {
+branch  0 never executed
+branch  1 never executed
+    #####:   66:        for (unsigned int j = 0; j < GameState::SIZE; j++) {
+branch  0 never executed
+branch  1 never executed
+    #####:   67:            char play = state.getPlay(i, j);
+call    0 never executed
+    #####:   68:            if (play != ' ') {
+branch  0 never executed
+branch  1 never executed
+    #####:   69:                sf::CircleShape shape = createShape(texture, i, j, play);
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+call    3 never executed
+call    4 never executed
+    #####:   70:                draw(shape);
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+        -:   71:            }
+        -:   72:        }
+        -:   73:    }
+        -:   74:
+        -:   75:    // Draw the final message
+    #####:   76:    if (state.isGameStop()) {
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:   77:        sf::Text text = createText(manager.getFont(), state.getFinalMessage());
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+call    3 never executed
+branch  4 never executed
+branch  5 never executed
+call    6 never executed
+branch  7 never executed
+branch  8 never executed
+call    9 never executed
+call   10 never executed
+    #####:   78:        draw(text);
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:   79:    } else if (state.isThinking()) {
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:   80:        sf::Text text = createText(manager.getFont(), "Thinking...");
+call    0 never executed
+call    1 never executed
+branch  2 never executed
+branch  3 never executed
+call    4 never executed
+branch  5 never executed
+branch  6 never executed
+call    7 never executed
+branch  8 never executed
+branch  9 never executed
+call   10 never executed
+call   11 never executed
+call   12 never executed
+    #####:   81:        draw(text);
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+        -:   82:    }
+    #####:   83:}
+        -:   84:
+        -:   85:// Create shape X, O
+function _ZN10GameWindow11createShapeERN2sf7TextureEjjc called 0 returned 0% blocks executed 0%
+    #####:   86:sf::CircleShape GameWindow::createShape(sf::Texture& texture, unsigned int i, unsigned int j, char player)
+        -:   87:{
+    #####:   88:    sf::CircleShape shape(SHAPE_RADIUS);
+call    0 never executed
+        -:   89:    // shape.setFillColor(sf::Color::Green);
+    #####:   90:    shape.setTexture(&texture);
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:   91:    if (player == 'O')
+branch  0 never executed
+branch  1 never executed
+    #####:   92:        shape.setTextureRect(ORECT);
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+        -:   93:    else
+    #####:   94:        shape.setTextureRect(XRECT);
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:   95:    shape.setPosition(sf::Vector2f(i*CELL_HEIGHT, j*CELL_WIDTH));
+call    0 never executed
+call    1 never executed
+branch  2 never executed
+branch  3 never executed
+        -:   96:
+    #####:   97:    return shape;
+        -:   98:}
+        -:   99:
+        -:  100:// Create text to display final message
+function _ZN10GameWindow10createTextERN2sf4FontERKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEE called 0 returned 0% blocks executed 0%
+    #####:  101:sf::Text GameWindow::createText(sf::Font& font, const std::string& msg)
+        -:  102:{
+    #####:  103:    sf::Text text;
+call    0 never executed
+        -:  104:    // select the font
+    #####:  105:    text.setFont(font); // font is a sf::Font
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+        -:  106:
+        -:  107:    // set the character size
+    #####:  108:    text.setCharacterSize(24); // in pixels, not points!
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+        -:  109:
+        -:  110:    // set the color
+    #####:  111:    text.setFillColor(sf::Color::Cyan);
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+        -:  112:
+        -:  113:    // set the text style
+    #####:  114:    text.setStyle(sf::Text::Bold | sf::Text::Underlined);
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:  115:    text.setScale(3.0f, 3.0f);
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+        -:  116:
+        -:  117:    // set the string to display
+    #####:  118:    text.setString(msg);
+call    0 never executed
+call    1 never executed
+branch  2 never executed
+branch  3 never executed
+call    4 never executed
+branch  5 never executed
+branch  6 never executed
+call    7 never executed
+call    8 never executed
+call    9 never executed
+call   10 never executed
+        -:  119:    // set the origin to the center of the text
+    #####:  120:    text.setOrigin(text.getLocalBounds().width / 2, text.getLocalBounds().height / 2);
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+call    3 never executed
+branch  4 never executed
+branch  5 never executed
+call    6 never executed
+branch  7 never executed
+branch  8 never executed
+        -:  121:    // set the position to the center of the window
+    #####:  122:    text.setPosition(WINDOW_WIDTH / 2, WINDOW_HEIGHT / 2);
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+        -:  123:
+    #####:  124:    return text;
+        -:  125:}  
+        -:  126:
+function _ZN10GameWindow12createButtonERKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEE called 0 returned 0% blocks executed 0%
+    #####:  127:sf::Sprite GameWindow::createButton(const std::string& msg)
+        -:  128:{
+    #####:  129:    sf::Sprite button;
+call    0 never executed
+    #####:  130:    button.setTexture(manager.getButtonTexture());
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+call    3 never executed
+branch  4 never executed
+branch  5 never executed
+    #####:  131:    if (msg == "Human vs Machine")
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:  132:        button.setTextureRect(sf::IntRect(20, 20, 200, 200));
+call    0 never executed
+call    1 never executed
+branch  2 never executed
+branch  3 never executed
+    #####:  133:    else if (msg == "Human vs Human")
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:  134:        button.setTextureRect(sf::IntRect(230, 20, 200, 200));
+call    0 never executed
+call    1 never executed
+branch  2 never executed
+branch  3 never executed
+        -:  135:    else // if (msg == "Machine vs Human")
+    #####:  136:        button.setTextureRect(sf::IntRect(220, 20, -200, 200));
+call    0 never executed
+call    1 never executed
+branch  2 never executed
+branch  3 never executed
+    #####:  137:    return button;
+        -:  138:}
+        -:  139:
+function _ZN10GameWindow14setHoveredCellEii called 0 returned 0% blocks executed 0%
+    #####:  140:void GameWindow::setHoveredCell(int i, int j)
+        -:  141:{
+    #####:  142:    if (i >= 0 && i < GameState::SIZE && j >= 0 && j < GameState::SIZE) {
+branch  0 never executed
+branch  1 never executed
+branch  2 never executed
+branch  3 never executed
+branch  4 never executed
+branch  5 never executed
+branch  6 never executed
+branch  7 never executed
+    #####:  143:        hoverI = i;
+    #####:  144:        hoverJ = j;
+        -:  145:    }
+    #####:  146:}
+        -:  147:
+function _ZN10GameWindow17setHoveredButtonsEN2sf7Vector2IiEE called 0 returned 0% blocks executed 0%
+    #####:  148:void GameWindow::setHoveredButtons(sf::Vector2i localPosition)
+        -:  149:{
+    #####:  150:    isHoverOnButtonHvsH = GameWindow::getButtonHvsHRect().contains(localPosition);
+call    0 never executed
+call    1 never executed
+branch  2 never executed
+branch  3 never executed
+call    4 never executed
+    #####:  151:    isHoverOnButtonHvsM = GameWindow::getButtonHvsMRect().contains(localPosition);
+call    0 never executed
+call    1 never executed
+branch  2 never executed
+branch  3 never executed
+call    4 never executed
+    #####:  152:    isHoverOnButtonMvsH = GameWindow::getButtonMvsHRect().contains(localPosition);
+call    0 never executed
+call    1 never executed
+branch  2 never executed
+branch  3 never executed
+    #####:  153:}

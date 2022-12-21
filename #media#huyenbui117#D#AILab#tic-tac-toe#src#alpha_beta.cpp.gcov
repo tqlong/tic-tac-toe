@@ -1,0 +1,386 @@
+        -:    0:Source:/media/huyenbui117/D/AILab/tic-tac-toe/src/alpha_beta.cpp
+        -:    1:#include "tictactoe/game_state.h"
+        -:    2:
+        -:    3:// Check if the game is over
+function _ZN9GameState12isFinalStateESt6vectorIS0_IcSaIcEESaIS2_EE called 48 returned 100% blocks executed 84%
+       48:    4:bool GameState::isFinalState(State b)
+        -:    5:{
+        -:    6:    // check rows
+      132:    7:    for (unsigned int i = 0; i < SIZE; i++)
+branch  0 taken 82% (fallthrough)
+branch  1 taken 18%
+      108:    8:        if (b[i][0] == b[i][1] && b[i][0] == b[i][2] && b[i][0] != ' ') return true;
+call    0 returned 100%
+call    1 returned 100%
+call    2 returned 100%
+call    3 returned 100%
+branch  4 taken 78% (fallthrough)
+branch  5 taken 22%
+call    6 returned 100%
+call    7 returned 100%
+call    8 returned 100%
+call    9 returned 100%
+branch 10 taken 57% (fallthrough)
+branch 11 taken 43%
+call   12 returned 100%
+call   13 returned 100%
+branch 14 taken 50% (fallthrough)
+branch 15 taken 50%
+branch 16 taken 22% (fallthrough)
+branch 17 taken 78%
+        -:    9:    // check cols
+       96:   10:    for (unsigned int i = 0; i < SIZE; i++)
+branch  0 taken 75% (fallthrough)
+branch  1 taken 25%
+      72*:   11:        if (b[0][i] == b[1][i] && b[0][i] == b[2][i] && b[0][i] != ' ') return true;
+call    0 returned 100%
+call    1 returned 100%
+call    2 returned 100%
+call    3 returned 100%
+branch  4 taken 25% (fallthrough)
+branch  5 taken 75%
+call    6 returned 100%
+call    7 returned 100%
+call    8 returned 100%
+call    9 returned 100%
+branch 10 taken 100% (fallthrough)
+branch 11 taken 0%
+call   12 returned 100%
+call   13 returned 100%
+branch 14 taken 0% (fallthrough)
+branch 15 taken 100%
+branch 16 taken 0% (fallthrough)
+branch 17 taken 100%
+        -:   12:    // check diagonals
+      24*:   13:    if (b[0][0] == b[1][1] && b[0][0] == b[2][2] && b[0][0] != ' ') return true;
+call    0 returned 100%
+call    1 returned 100%
+call    2 returned 100%
+call    3 returned 100%
+branch  4 taken 0% (fallthrough)
+branch  5 taken 100%
+call    6 never executed
+call    7 never executed
+call    8 never executed
+call    9 never executed
+branch 10 never executed
+branch 11 never executed
+call   12 never executed
+call   13 never executed
+branch 14 never executed
+branch 15 never executed
+branch 16 taken 0% (fallthrough)
+branch 17 taken 100%
+      24*:   14:    if (b[0][2] == b[1][1] && b[0][2] == b[2][0] && b[0][2] != ' ') return true;
+call    0 returned 100%
+call    1 returned 100%
+call    2 returned 100%
+call    3 returned 100%
+branch  4 taken 100% (fallthrough)
+branch  5 taken 0%
+call    6 returned 100%
+call    7 returned 100%
+call    8 returned 100%
+call    9 returned 100%
+branch 10 taken 50% (fallthrough)
+branch 11 taken 50%
+call   12 returned 100%
+call   13 returned 100%
+branch 14 taken 0% (fallthrough)
+branch 15 taken 100%
+branch 16 taken 0% (fallthrough)
+branch 17 taken 100%
+        -:   15:    // check full
+       60:   16:    for (unsigned int i = 0; i < SIZE; i++) {
+branch  0 taken 80% (fallthrough)
+branch  1 taken 20%
+      174:   17:        for (unsigned int j = 0; j < SIZE; j++) {
+branch  0 taken 79% (fallthrough)
+branch  1 taken 21%
+      138:   18:            if (b[i][j] == ' ') return false;
+call    0 returned 100%
+call    1 returned 100%
+branch  2 taken 9% (fallthrough)
+branch  3 taken 91%
+        -:   19:        }
+        -:   20:    }
+       12:   21:    return true;
+        -:   22:}
+        -:   23:
+        -:   24:// Get the final score
+        -:   25:// 1: X wins, -1: O wins, 0: draw
+function _ZN9GameState18getScoreFinalStateESt6vectorIS0_IcSaIcEESaIS2_EE called 21 returned 100% blocks executed 73%
+       21:   26:int GameState::getScoreFinalState(State b)
+        -:   27:{
+        -:   28:    // check rows
+       54:   29:    for (unsigned int i = 0; i < SIZE; i++)
+branch  0 taken 83% (fallthrough)
+branch  1 taken 17%
+       45:   30:        if (b[i][0] == b[i][1] && b[i][0] == b[i][2] && b[i][0] != ' ') 
+call    0 returned 100%
+call    1 returned 100%
+call    2 returned 100%
+call    3 returned 100%
+branch  4 taken 69% (fallthrough)
+branch  5 taken 31%
+call    6 returned 100%
+call    7 returned 100%
+call    8 returned 100%
+call    9 returned 100%
+branch 10 taken 42% (fallthrough)
+branch 11 taken 58%
+call   12 returned 100%
+call   13 returned 100%
+branch 14 taken 92% (fallthrough)
+branch 15 taken 8%
+branch 16 taken 27% (fallthrough)
+branch 17 taken 73%
+       12:   31:            return b[i][0] == 'X' ? 1 : -1;
+call    0 returned 100%
+call    1 returned 100%
+branch  2 taken 50% (fallthrough)
+branch  3 taken 50%
+        -:   32:    // check cols
+       30:   33:    for (unsigned int i = 0; i < SIZE; i++)
+branch  0 taken 77% (fallthrough)
+branch  1 taken 23%
+       23:   34:        if (b[0][i] == b[1][i] && b[0][i] == b[2][i] && b[0][i] != ' ')
+call    0 returned 100%
+call    1 returned 100%
+call    2 returned 100%
+call    3 returned 100%
+branch  4 taken 13% (fallthrough)
+branch  5 taken 87%
+call    6 returned 100%
+call    7 returned 100%
+call    8 returned 100%
+call    9 returned 100%
+branch 10 taken 100% (fallthrough)
+branch 11 taken 0%
+call   12 returned 100%
+call   13 returned 100%
+branch 14 taken 67% (fallthrough)
+branch 15 taken 33%
+branch 16 taken 9% (fallthrough)
+branch 17 taken 91%
+       2*:   35:            return b[0][i] == 'X' ? 1 : -1;
+call    0 returned 100%
+call    1 returned 100%
+branch  2 taken 100% (fallthrough)
+branch  3 taken 0%
+       7*:   36:    if (b[0][0] == b[1][1] && b[0][0] == b[2][2] && b[0][0] != ' ')
+call    0 returned 100%
+call    1 returned 100%
+call    2 returned 100%
+call    3 returned 100%
+branch  4 taken 0% (fallthrough)
+branch  5 taken 100%
+call    6 never executed
+call    7 never executed
+call    8 never executed
+call    9 never executed
+branch 10 never executed
+branch 11 never executed
+call   12 never executed
+call   13 never executed
+branch 14 never executed
+branch 15 never executed
+branch 16 taken 0% (fallthrough)
+branch 17 taken 100%
+    #####:   37:        return b[0][0] == 'X' ? 1 : -1;
+call    0 never executed
+call    1 never executed
+branch  2 never executed
+branch  3 never executed
+       7*:   38:    if (b[0][2] == b[1][1] && b[0][2] == b[2][0] && b[0][2] != ' ')
+call    0 returned 100%
+call    1 returned 100%
+call    2 returned 100%
+call    3 returned 100%
+branch  4 taken 86% (fallthrough)
+branch  5 taken 14%
+call    6 returned 100%
+call    7 returned 100%
+call    8 returned 100%
+call    9 returned 100%
+branch 10 taken 0% (fallthrough)
+branch 11 taken 100%
+call   12 never executed
+call   13 never executed
+branch 14 never executed
+branch 15 never executed
+branch 16 taken 0% (fallthrough)
+branch 17 taken 100%
+    #####:   39:        return b[0][2] == 'X' ? 1 : -1;;
+call    0 never executed
+call    1 never executed
+branch  2 never executed
+branch  3 never executed
+        7:   40:    return 0;
+        -:   41:}
+        -:   42:
+function _ZN9GameState13getNextStatesESt6vectorIS0_IcSaIcEESaIS2_EE called 0 returned 0% blocks executed 0%
+    #####:   43:std::vector<GameState::State> GameState::getNextStates(State b)
+        -:   44:{
+    #####:   45:    char nextPlayer = getNextPlayer(b);
+call    0 never executed
+call    1 never executed
+branch  2 never executed
+branch  3 never executed
+call    4 never executed
+call    5 never executed
+call    6 never executed
+    #####:   46:    std::vector<State> states;
+call    0 never executed
+    #####:   47:    for (unsigned int i = 0; i < SIZE; i++) {
+branch  0 never executed
+branch  1 never executed
+    #####:   48:        for (unsigned int j = 0; j < SIZE; j++) {
+branch  0 never executed
+branch  1 never executed
+    #####:   49:            if (b[i][j] == ' ') {
+call    0 never executed
+call    1 never executed
+branch  2 never executed
+branch  3 never executed
+    #####:   50:                State nextState = play(b, i, j, nextPlayer);
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+call    3 never executed
+branch  4 never executed
+branch  5 never executed
+call    6 never executed
+call    7 never executed
+    #####:   51:                states.push_back(nextState);
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+        -:   52:            }
+        -:   53:        }
+        -:   54:    }
+    #####:   55:    return states;
+        -:   56:}
+        -:   57:
+        -:   58:/// @brief Get the score of the state
+        -:   59:/// and the best next state
+        -:   60:/// @param b the state
+        -:   61:/// @param isMax true if the current player is the maximizing player
+        -:   62:/// @param alpha MAX best score
+        -:   63:/// @param beta MIN best score
+        -:   64:/// @return std::pair<int, State> the score and the best next state
+function _ZN9GameState8getScoreESt6vectorIS0_IcSaIcEESaIS2_EEbii called 0 returned 0% blocks executed 0%
+    #####:   65:std::pair<int, GameState::State> GameState::getScore(State b, bool isMax, int alpha, int beta)
+        -:   66:{
+        -:   67:    // base case
+    #####:   68:    if (isFinalState(b)) return make_pair(getScoreFinalState(b), b);
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+call    3 never executed
+call    4 never executed
+branch  5 never executed
+branch  6 never executed
+call    7 never executed
+branch  8 never executed
+branch  9 never executed
+call   10 never executed
+call   11 never executed
+branch 12 never executed
+branch 13 never executed
+call   14 never executed
+call   15 never executed
+        -:   69:
+        -:   70:    // get all possible next states
+    #####:   71:    std::vector<State> states = getNextStates(b);
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+call    3 never executed
+branch  4 never executed
+branch  5 never executed
+call    6 never executed
+call    7 never executed
+        -:   72:    
+        -:   73:    // store the best score and the best next state
+    #####:   74:    const int INVALID = -10;
+    #####:   75:    int bestScore = INVALID;
+    #####:   76:    State bestState;
+call    0 never executed
+call    1 never executed
+call    2 never executed
+        -:   77:
+        -:   78:    // recursively get the score of the next states
+    #####:   79:    for (State ns: states) {
+call    0 never executed
+call    1 never executed
+call    2 never executed
+branch  3 never executed
+branch  4 never executed
+call    5 never executed
+call    6 never executed
+branch  7 never executed
+branch  8 never executed
+call    9 never executed
+call   10 never executed
+    #####:   80:        std::pair<int, State> p = getScore(ns, !isMax, alpha, beta);
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+call    3 never executed
+branch  4 never executed
+branch  5 never executed
+call    6 never executed
+    #####:   81:        int score = p.first;
+        -:   82:        // update best score for MAX
+    #####:   83:        if (isMax) {
+branch  0 never executed
+branch  1 never executed
+    #####:   84:            if (bestScore < score || bestScore == INVALID) {
+branch  0 never executed
+branch  1 never executed
+branch  2 never executed
+branch  3 never executed
+    #####:   85:                bestScore = score;
+    #####:   86:                bestState = ns;
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+        -:   87:            }
+        -:   88:            // prune if bestScore >= best option for MIN
+    #####:   89:            if (bestScore >= beta) return make_pair(bestScore, bestState);
+branch  0 never executed
+branch  1 never executed
+call    2 never executed
+branch  3 never executed
+branch  4 never executed
+    #####:   90:            alpha = std::max(alpha, bestScore);
+call    0 never executed
+        -:   91:        } else { // update best score for MIN
+    #####:   92:            if (bestScore > score || bestScore == INVALID) {
+branch  0 never executed
+branch  1 never executed
+branch  2 never executed
+branch  3 never executed
+    #####:   93:                bestScore = score;
+    #####:   94:                bestState = ns;
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+        -:   95:            }
+        -:   96:            // prune if bestScore <= best option for MAX
+    #####:   97:            if (bestScore <= alpha) return make_pair(bestScore, bestState);
+branch  0 never executed
+branch  1 never executed
+call    2 never executed
+branch  3 never executed
+branch  4 never executed
+    #####:   98:            beta = std::min(beta, bestScore);
+call    0 never executed
+        -:   99:        }
+        -:  100:    }
+    #####:  101:    return make_pair(bestScore, bestState);
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+        -:  102:}
