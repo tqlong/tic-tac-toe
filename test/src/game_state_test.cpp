@@ -89,12 +89,27 @@ protected:
             state.s[1][0] = 'X'; state.s[1][1] = 'O'; state.s[1][2] = 'O';
             state.s[2][0] = 'O'; state.s[2][1] = ' '; state.s[2][2] = ' ';
             EXPECT_EQ(state.getScoreFinalState(state.s), 1);
-        }        {
+        }        
+        {
             GameState state1;
             state1.s[0][0] = 'X'; state1.s[0][1] = 'O'; state1.s[0][2] = 'X';
             state1.s[1][0] = 'X'; state1.s[1][1] = 'O'; state1.s[1][2] = 'O';
             state1.s[2][0] = 'X'; state1.s[2][1] = ' '; state1.s[2][2] = ' ';
             EXPECT_EQ(state1.getScoreFinalState(state1.s), 1);
+        }
+        {
+            GameState state2;
+            state2.s[0][0] = 'X'; state2.s[0][1] = 'O'; state2.s[0][2] = 'O';
+            state2.s[1][0] = ' '; state2.s[1][1] = 'X'; state2.s[1][2] = 'O';
+            state2.s[2][0] = 'X'; state2.s[2][1] = ' '; state2.s[2][2] = 'X';
+            EXPECT_EQ(state2.getScoreFinalState(state2.s), 1);
+        }
+        {
+            GameState state3;
+            state3.s[0][0] = 'X'; state3.s[0][1] = 'O'; state3.s[0][2] = 'X';
+            state3.s[1][0] = 'O'; state3.s[1][1] = 'X'; state3.s[1][2] = 'O';
+            state3.s[2][0] = 'X'; state3.s[2][1] = ' '; state3.s[2][2] = ' ';
+            EXPECT_EQ(state3.getScoreFinalState(state3.s), 1);
         }
     }
 
