@@ -10,12 +10,12 @@ project(
 )
 
 message(STATUS "Adding tests under ${CMAKE_PROJECT_NAME}Tests...")
+find_package(GTest REQUIRED)
 
 foreach(file ${test_sources})
   string(REGEX REPLACE "(.*/)([a-zA-Z0-9_ ]+)(\.cpp)" "\\2" test_name ${file}) 
   add_executable(${test_name}_Tests ${file})
 
-  find_package(GTest REQUIRED)
   target_include_directories(${test_name}_Tests PUBLIC ${CMAKE_SOURCE_DIR}/include)
   target_link_libraries(${test_name}_Tests PUBLIC GTest::GTest GTest::Main ${CMAKE_PROJECT_NAME}_LIB)
 

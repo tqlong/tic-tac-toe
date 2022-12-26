@@ -97,6 +97,16 @@ replace the CMake option `-DProject_ENABLE_CODE_COVERAGE=1` to
 `-DMyNewProject_ENABLE_CODE_COVERAGE=1`.
 
 ```
+# install Google Test
+cd ..
+git clone https://github.com/google/googletest.git
+cd googletest
+cmake -Bbuild -DCMAKE_INSTALL_PREFIX=/Users/longtran/Desktop/Xcode/.local
+cmake --build build --config Release
+cmake --build build --target install --config Release
+
+# Build Tic-Tac-Toe
+cd ../tic-tac-toe/
 cmake -Bbuild -DCMAKE_INSTALL_PREFIX=/Users/longtran/Desktop/XCode/.local -Dtictactoe_ENABLE_CODE_COVERAGE=1
 cmake --build build --config Release -j10
 cd build
